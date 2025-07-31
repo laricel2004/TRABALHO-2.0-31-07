@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gerador de Senhas Roxo</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <section class="conteudo">
+        <div class="conteudo-titulo">
+            <img src="unlock.svg" alt="cadeado roxo" class="cadeado-icon">
+            <h2 class="titulo-principal">Gerador de Senhas</h2>
+            <h3 class="titulo-secundario">Crie senhas seguras e elegantes</h3>
+        </div>
+        
+        <div class="conteudo-senha">
+            <label for="senha">Sua senha:</label>
+            <div class="senha-container">
+                <input name="senha" type="text" id="campo-senha" readonly>
+                <button id="copiar-senha" title="Copiar senha">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M8 4V16C8 17.1046 8.89543 18 10 18H18C19.1046 18 20 17.1046 20 16V7C20 6.44772 19.5523 6 19 6H14C12.8954 6 12 5.10457 12 4V4C12 3.44772 11.5523 3 11 3H9C8.44772 3 8 3.44772 8 4Z" fill="#9C27B0"/>
+                        <path d="M4 8V20C4 21.1046 4.89543 22 6 22H14C15.1046 22 16 21.1046 16 20V8C16 6.89543 15.1046 6 14 6H6C4.89543 6 4 6.89543 4 8Z" fill="#7B1FA2"/>
+                    </svg>
+                </button>
+            </div>
+            <div class="senha-forca">
+                <div class="barra-forca">
+                    <div id="indicador-forca" class="fraca"></div>
+                </div>
+                <div class="parametro-senha-textos">
+                    <span>Fraca</span>
+                    <span>Média</span>
+                    <span>Forte</span>
+                </div>
+                <p class="entropia"></p>
+            </div>
+        </div>
+        
+        <div class="parametro">
+            <h3 class="parametro-titulo">Personalize sua senha</h3>
+            
+            <div class="parametro-coluna__senha">
+                <div class="parametro-senha">
+                    <h4 class="parametro-senha__titulo">Número de caracteres</h4>
+                    <div class="parametro-senha-botoes">
+                        <button class="parametro-senha__botao" id="diminuir">-</button>
+                        <p class="parametro-senha__texto">12</p>
+                        <button class="parametro-senha__botao" id="aumentar">+</button>
+                    </div>
+                </div>
+                
+                <div class="parametro-senha">
+                    <h4 class="parametro-senha__titulo">Características</h4>
+                    <div class="parametro-senha-checkbox">
+                        <input name="maiusculo" type="checkbox" class="checkbox" checked id="maiusculo">
+                        <label for="maiusculo">Letras maiúsculas</label>
+                    </div>
+                    <div class="parametro-senha-checkbox">
+                        <input name="minusculo" type="checkbox" class="checkbox" checked id="minusculo">
+                        <label for="minusculo">Letras minúsculas</label>
+                    </div>
+                    <div class="parametro-senha-checkbox">
+                        <input name="numero" type="checkbox" class="checkbox" id="numero">
+                        <label for="numero">Números</label>
+                    </div>
+                    <div class="parametro-senha-checkbox">
+                        <input name="simbolo" type="checkbox" class="checkbox" id="simbolo">
+                        <label for="simbolo">Símbolos</label>
+                    </div>
+                </div>
+                
+                <div class="parametro-senha">
+                    <h4 class="parametro-senha__titulo">Classificação por idade</h4>
+                    <div class="barra-idade">
+                        <div id="indicador-idade" class="crianca"></div>
+                    </div>
+                    <div class="idade-textos">
+                        <span>Criança</span>
+                        <span>Adolescente</span>
+                        <span>Adulto</span>
+                    </div>
+                    <input type="number" id="idade-input" min="0" max="120" placeholder="Digite sua idade">
+                </div>
+            </div>
+            
+            <button id="gerar-senha" class="btn-gerar">Gerar Senha</button>
+        </div>
+    </section>
+
+    <div id="toast" class="toast">Senha copiada!</div>
+
+    <script src="main.js"></script>
+</body>
+
+</html>
